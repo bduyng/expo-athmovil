@@ -1,10 +1,10 @@
-import { NativeModulesProxy, EventEmitter, Subscription } from 'expo-modules-core';
+import { EventEmitter, NativeModulesProxy, Subscription } from 'expo-modules-core';
 
 // Import the native module. On web, it will be resolved to ExpoAthmovil.web.ts
 // and on native platforms to ExpoAthmovil.ts
+import { ChangeEventPayload, ExpoAthmovilViewProps } from './ExpoAthmovil.types';
 import ExpoAthmovilModule from './ExpoAthmovilModule';
 import ExpoAthmovilView from './ExpoAthmovilView';
-import { ChangeEventPayload, ExpoAthmovilViewProps } from './ExpoAthmovil.types';
 
 // Get the native constant value.
 export const PI = ExpoAthmovilModule.PI;
@@ -15,6 +15,10 @@ export function hello(): string {
 
 export async function setValueAsync(value: string) {
   return await ExpoAthmovilModule.setValueAsync(value);
+}
+
+export async function payWithATHMovil() {
+  return ExpoAthmovilModule.payWithATHMovil('hello');
 }
 
 const emitter = new EventEmitter(ExpoAthmovilModule ?? NativeModulesProxy.ExpoAthmovil);
