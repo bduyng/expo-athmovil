@@ -88,4 +88,12 @@ repositories {
 dependencies {
   implementation project(':expo-modules-core')
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${getKotlinVersion()}"
+  
+  implementation 'com.github.evertec:athmovil-android-sdk:4.0.0'
+  implementation 'androidx.annotation:annotation:1.2.0'
+  implementation 'com.google.code.gson:gson:2.8.6'
+  implementation 'com.google.android.material:material:1.4.0'
+  implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+  implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+  implementation 'androidx.constraintlayout:constraintlayout:2.1.0'
 }

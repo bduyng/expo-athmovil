@@ -1,11 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native';
-
-import * as ExpoAthmovil from 'expo-athmovil';
+import * as ExpoAthmovil from "expo-athmovil";
+import { StyleSheet, Text, View } from "react-native";
 
 export default function App() {
   return (
     <View style={styles.container}>
       <Text>{ExpoAthmovil.hello()}</Text>
+      <ExpoAthmovil.ExpoAthmovilView
+        style={{ width: 220, height: 60, backgroundColor: "blue" }}
+      />
     </View>
   );
 }
@@ -13,8 +15,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
