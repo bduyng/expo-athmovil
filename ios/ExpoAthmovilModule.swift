@@ -21,7 +21,7 @@ public class ExpoAthmovilModule: Module {
 
     // Defines a JavaScript synchronous function that runs the native code on the JavaScript thread.
     Function("hello") {
-      return "Hello world! 👋"
+      return "Hello world!"
     }
 
     // Defines a JavaScript function that always returns a Promise and whose native code
@@ -33,23 +33,35 @@ public class ExpoAthmovilModule: Module {
       ])
     }
 
-    AsyncFunction("payWithATHMovil") { (message: String, promise: Promise) in
-      let businessAccount = ATHMBusinessAccount(token: "Public Token of your ATH Móvil business account")
-      let urlScheme = ATHMURLScheme(urlScheme: "URL Scheme of your application")
-      let payment = ATHMPayment(total: 20.00)
+    AsyncFunction("payWithATHMovil") { (params: ParamsType, promise: Promise) in
+      let businessAccount = ATHMBusinessAccount(token: params.businessAccount)
+      let urlScheme = ATHMURLScheme(urlScheme: params.urlScheme)
+      /// Payment object
+      let payment = ATHMPayment(total: params.total)
+      payment.subtotal = params.subtotal
+      payment.tax = params.tax
+      payment.metadata1 = params.metadata1
+      payment.metadata2 = params.metadata2
+      payment.items = params.items.map{(item) -> ATHMPaymentItem in
+        return ATHMPaymentItem(dictionary: item.toDictionary() as NSDictionary)
+      }
 
       /// The object below will tell you the status of the payment after the end user has completed the payment process.
       /// The code inside onCompleted, onExpired, onCancelled or onException is on the main thread.
 
-      let hander = ATHMPaymentHandler(onCompleted: { [weak self] (payment: ATHMPaymentResponse) in
-          /// Handle the response when the payment is completed here.
-          promise.resolve(message)
+      let hander = ATHMPaymentHandler(onCompleted: { [weak self] (response: ATHMPaymentResponse) in
+        /// Handle the response when the payment is completed here.
+        promise.resolve([
+          "payment": response.payment.dictionaryWithValues(forKeys: ["total","subtotal","tax","metadata1","metadata2"]),
+          "customer": response.customer.dictionaryWithValues(forKeys: ["name","phoneNumber","email"]),
+          "status": response.status.dictionaryWithValues(forKeys: ["statusPayment", "date","referenceNumber","dailyTransactionID"]),
+        ])
 
-      }, onExpired: { [weak self] (payment: ATHMPaymentResponse) in
+      }, onExpired: { [weak self] (response: ATHMPaymentResponse) in
           /// Handle the response when the payment is expired here.
           promise.reject("404", "expired")
 
-      }, onCancelled: { [weak self] (payment: ATHMPaymentResponse) in
+      }, onCancelled: { [weak self] (response: ATHMPaymentResponse) in
           /// Handle the response when the payment is cancelled here.
           promise.reject("401", "cancelled")
 
@@ -80,4 +92,48 @@ public class ExpoAthmovilModule: Module {
       }
     }
   }
+}
+
+struct ParamsType: Record {
+  @Field
+  var businessAccount: String = "utf8"
+
+  @Field
+  var urlScheme: String = ""
+
+  @Field
+  var total: NSNumber = 0
+  
+  @Field
+  var subtotal: NSNumber = 0
+  
+  @Field
+  var tax: NSNumber = 0
+  
+  @Field
+  var metadata1: String = ""
+  
+  @Field
+  var metadata2: String = ""
+  
+  @Field
+  var items: [PaymentItemType] = []
+}
+
+struct PaymentItemType: Record {
+  @Field
+  var name: String = ""
+  
+  @Field
+  var price: NSNumber = 0
+  
+  @Field
+  var quantity: Int = 0
+  
+  @Field
+  var desc: String = ""
+  
+  @Field
+  var metadata: String = ""
+  
 }

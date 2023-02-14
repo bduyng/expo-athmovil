@@ -1,4 +1,5 @@
 PODS:
+  - athmovil-checkout (4.0.0)
   - boost (1.76.0)
   - DoubleConversion (1.1.6)
   - EXApplication (5.0.1):
@@ -12,6 +13,7 @@ PODS:
   - Expo (47.0.13):
     - ExpoModulesCore
   - ExpoAthmovil (0.1.0):
+    - athmovil-checkout
     - ExpoModulesCore
   - ExpoKeepAwake (11.0.1):
     - ExpoModulesCore
@@ -350,6 +352,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - athmovil-checkout
     - fmt
 
 EXTERNAL SOURCES:
@@ -435,6 +438,7 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
 SPEC CHECKSUMS:
+  athmovil-checkout: dd6ddb37a037e3ea6ba30216152f7a9b5dd308ac
   boost: a7c83b31436843459a1961bfd74b96033dc77234
   DoubleConversion: 5189b271737e1565bdce30deb4a08d647e3f5f54
   EXApplication: 034b1c40a8e9fe1bff76a1e511ee90dff64ad834
@@ -442,7 +446,7 @@ SPEC CHECKSUMS:
   EXFileSystem: 60602b6eefa6873f97172c684b7537c9760b50d6
   EXFont: 319606bfe48c33b5b5063fb0994afdc496befe80
   Expo: b9fa98bf260992312ee3c424400819fb9beadafe
-  ExpoAthmovil: d8112f85d9d86b08908e81ddc3158dad5d313765
+  ExpoAthmovil: 3bdac7776ec9d24a6033eae1683f5bc21fe83998
   ExpoKeepAwake: 69b59d0a8d2b24de9f82759c39b3821fec030318
   ExpoModulesCore: 485dff3a59b036a33b6050c0a5aea3cf1037fdd1
   FBLazyVector: affa4ba1bfdaac110a789192f4d452b053a86624
@@ -477,6 +481,6 @@ SPEC CHECKSUMS:
   ReactCommon: c9246996e73bf75a2c6c3ff15f1e16707cdc2da9
   Yoga: eca980a5771bf114c41a754098cd85e6e0d90ed7
 
-PODFILE CHECKSUM: c2e0dbb69fc074080524c84b660b404e01d8f67d
+PODFILE CHECKSUM: a33c875ba314438cc53b6d750be6e1fb1c1c3f81
 
 COCOAPODS: 1.11.3

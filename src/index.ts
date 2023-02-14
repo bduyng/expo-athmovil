@@ -17,8 +17,17 @@ export async function setValueAsync(value: string) {
   return await ExpoAthmovilModule.setValueAsync(value);
 }
 
-export async function payWithATHMovil() {
-  return ExpoAthmovilModule.payWithATHMovil('hello');
+export async function payWithATHMovil(params: {
+  businessAccount: string;
+  urlScheme: string;
+  total: number;
+  subtotal: number;
+  tax: number;
+  metadata1: string;
+  metadata2: string;
+  items: {name: string; price: number; quantity: number}[];
+}) {
+  return ExpoAthmovilModule.payWithATHMovil(params);
 }
 
 const emitter = new EventEmitter(ExpoAthmovilModule ?? NativeModulesProxy.ExpoAthmovil);
