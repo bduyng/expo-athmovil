@@ -1,11 +1,14 @@
 import * as ExpoAthmovil from "expo-athmovil";
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Pressable
-        onPress={() => {
+      <ExpoAthmovil.ExpoAthmovilView
+        style={{ width: 250, height: 60, borderRadius: 16}}
+        onButtonPress={()=>{
+          console.log('aaaaa');
+          
           ExpoAthmovil.payWithATHMovil({
             businessAccount: 'dummy',
             urlScheme: 'expo.modules.athmovil.example',
@@ -21,13 +24,7 @@ export default function App() {
             console.log('Error', error);
           });
         }}
-      >
-      <Text>{'Pay with ATHMovil'}</Text>
-      </Pressable>
-      {/* FIXME: */}
-      {/* <ExpoAthmovil.ExpoAthmovilView
-        style={{ width: 220, height: 60, backgroundColor: "blue" }}
-      /> */}
+      />
     </View>
   );
 }

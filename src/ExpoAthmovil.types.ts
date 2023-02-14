@@ -1,7 +1,10 @@
+import { StyleProp, ViewStyle } from "react-native";
+
 export type ChangeEventPayload = {
   value: string;
 };
 
 export type ExpoAthmovilViewProps = {
-  name: string;
+  style?: StyleProp<Omit<ViewStyle, 'backgroundColor'>>;
+  onButtonPress?(): void;
 };

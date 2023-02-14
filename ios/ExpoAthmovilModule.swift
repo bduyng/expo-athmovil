@@ -85,6 +85,8 @@ public class ExpoAthmovilModule: Module {
       View {
         ExpoAthmovilView()
       }
+      
+      Events("onButtonPress")
 
       // Defines a setter for the `name` prop.
       Prop("name") { (view: ExpoAthmovilView, prop: String) in
