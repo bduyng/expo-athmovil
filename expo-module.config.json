@@ -1,0 +1,9 @@
+{
+  "platforms": ["ios", "android", "web"],
+  "ios": {
+    "modules": ["ExpoAthmovilModule"]
+  },
+  "android": {
+    "modules": ["expo.modules.athmovil.ExpoAthmovilModule"]
+  }
+}
