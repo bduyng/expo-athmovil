@@ -1,0 +1,1 @@
+{"version":3,"file":"ExpoAthmovil.types.js","sourceRoot":"","sources":["../src/ExpoAthmovil.types.ts"],"names":[],"mappings":"","sourcesContent":["export type ChangeEventPayload = {\n  value: string;\n};\n\nexport type ExpoAthmovilViewProps = {\n  name: string;\n};\n"]}
