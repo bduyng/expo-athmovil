@@ -6,7 +6,7 @@
     <activity android:name=".Activity" android:exported="true">
       <intent-filter>
         <!--Schema with app bundle Configuration-->
-        <action android:name="expo.modules.athmovil.example.ATHMSDK" />
+        <action android:name="com.mlstudio.pickup.ATHMSDK" />
         <category android:name="android.intent.category.DEFAULT" />
       </intent-filter>
     </activity>
