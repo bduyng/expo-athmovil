@@ -1,0 +1,38 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="expo.modules.athmovil" >
+4
+5    <uses-sdk android:minSdkVersion="21" />
+5-->/Users/bduyng/Developer/ReactNativeHome/expo-athmovil/android/src/main/AndroidManifest.xml
+6
+7    <queries>
+7-->/Users/bduyng/Developer/ReactNativeHome/expo-athmovil/android/src/main/AndroidManifest.xml:2:3-4:13
+8        <package android:name="com.evertec.athmovil.android" />
+8-->/Users/bduyng/Developer/ReactNativeHome/expo-athmovil/android/src/main/AndroidManifest.xml:3:5-60
+8-->/Users/bduyng/Developer/ReactNativeHome/expo-athmovil/android/src/main/AndroidManifest.xml:3:14-57
+9    </queries>
+10
+11    <application>
+11-->/Users/bduyng/Developer/ReactNativeHome/expo-athmovil/android/src/main/AndroidManifest.xml:5:3-13:17
+12        <activity
+12-->/Users/bduyng/Developer/ReactNativeHome/expo-athmovil/android/src/main/AndroidManifest.xml:6:5-12:16
+13            android:name="expo.modules.athmovil.Activity"
+13-->/Users/bduyng/Developer/ReactNativeHome/expo-athmovil/android/src/main/AndroidManifest.xml:6:15-39
+14            android:exported="true" >
+14-->/Users/bduyng/Developer/ReactNativeHome/expo-athmovil/android/src/main/AndroidManifest.xml:6:40-63
+15            <intent-filter>
+15-->/Users/bduyng/Developer/ReactNativeHome/expo-athmovil/android/src/main/AndroidManifest.xml:7:7-11:23
+16
+17                <!-- Schema with app bundle Configuration -->
+18                <action android:name="expo.modules.athmovil.example.ATHMSDK" />
+18-->/Users/bduyng/Developer/ReactNativeHome/expo-athmovil/android/src/main/AndroidManifest.xml:9:9-72
+18-->/Users/bduyng/Developer/ReactNativeHome/expo-athmovil/android/src/main/AndroidManifest.xml:9:17-69
+19
+20                <category android:name="android.intent.category.DEFAULT" />
+20-->/Users/bduyng/Developer/ReactNativeHome/expo-athmovil/android/src/main/AndroidManifest.xml:10:9-68
+20-->/Users/bduyng/Developer/ReactNativeHome/expo-athmovil/android/src/main/AndroidManifest.xml:10:19-65
+21            </intent-filter>
+22        </activity>
+23    </application>
+24
+25</manifest>

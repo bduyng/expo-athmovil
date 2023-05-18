@@ -9,7 +9,7 @@ export default function App() {
         onPress={() => {
           ExpoAthmovil.payWithATHMovil({
             businessAccount: 'dummy',
-            urlScheme: 'expo.modules.athmovil.example',
+            urlScheme: 'ATHMSDK',
             total: 2.0,
             subtotal: 1.0,
             tax: 1.0,
@@ -21,7 +21,12 @@ export default function App() {
               console.log('Success', JSON.stringify(response, null, 2));
             })
             .catch(error => {
-              console.log('Error', error);
+              console.log(
+                'Error',
+                error.message,
+                Object.keys(error),
+                JSON.stringify(error, null, 2)
+              );
             });
         }}
       />

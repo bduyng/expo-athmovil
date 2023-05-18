@@ -1,2 +1,14 @@
-<manifest package="expo.modules.athmovil">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="expo.modules.athmovil">
+  <queries>
+    <package android:name="com.evertec.athmovil.android" />
+  </queries>
+  <application>
+    <activity android:name=".Activity" android:exported="true">
+      <intent-filter>
+        <!--Schema with app bundle Configuration-->
+        <action android:name="expo.modules.athmovil.example.ATHMSDK" />
+        <category android:name="android.intent.category.DEFAULT" />
+      </intent-filter>
+    </activity>
+  </application>
 </manifest>

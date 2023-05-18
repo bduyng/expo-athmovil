@@ -88,4 +88,6 @@ repositories {
 dependencies {
   implementation project(':expo-modules-core')
   implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${getKotlinVersion()}"
+
+  implementation 'com.github.evertec:athmovil-android-sdk:4.0.0'
 }

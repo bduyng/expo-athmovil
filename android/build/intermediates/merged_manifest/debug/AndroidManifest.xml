@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="expo.modules.athmovil" >
+
+    <uses-sdk android:minSdkVersion="21" />
+
+    <queries>
+        <package android:name="com.evertec.athmovil.android" />
+    </queries>
+
+    <application>
+        <activity
+            android:name="expo.modules.athmovil.Activity"
+            android:exported="true" >
+            <intent-filter>
+
+                <!-- Schema with app bundle Configuration -->
+                <action android:name="expo.modules.athmovil.example.ATHMSDK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
